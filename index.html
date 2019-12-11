@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="css/global/global.css">
+</head>
+
+<body onload="init()">
+
+    <h1 class="header">Welcome to my Meme Generator</h1>
+    <div class="images-wrapper"></div>
+    <div class="images-editor hidden">
+        Top Text Here <input placeholder="top-text" onkeyup="setTopTxt(value)"></input>
+        Top Text Here <input placeholder="bot-text" onkeyup="setBotTxt(value)"></input>
+        <button class="close-editor" onclick="closeEditor()">X</button>
+        <canvas class="my-canvas" width="1000" height="700"></canvas>
+    </div>
+
+
+    <script src="js/memeService.js"></script>
+    <script src="js/memeController.js"></script>
+</body>
+
+</html>
