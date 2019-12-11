@@ -1,5 +1,5 @@
 'use strict'
-var gMemes, gNextId = 1, gElGallery, gElEditor, gCurrMeme, gElCanvas, gCtx;
+var gMemes, gNextId = 1, gElGallery, gElEditor, gCurrMeme, gCurrElMeme, gElCanvas, gCtx;
 
 function createMemes() {
     gMemes = [];

@@ -13,30 +13,32 @@ function init() {
 function renderGallery() {
     var memes = gMemes;
     var items = memes.map(function (meme) {
-        return `<img src="${meme.imgURL}" onclick="onHideGallery(this)" data-id="${meme.id}"></img>`;
+        return `<img src="${meme.imgURL}" onclick="onHideGallery(this,${meme.id})" data-id="${meme.id}"></img>`;
     })
     gElGallery.innerHTML = items.join('');
 }
 
 
-function onHideGallery(elImg) {
+function onHideGallery(elImg, memeId) {
     gElGallery.classList.toggle('hidden');
-    renderEditor(elImg);
+    gCurrMeme = getMemeById(memeId);
+    gCurrElMeme = elImg;
+    renderEditor();
 }
 
-function renderEditor(elImg) {
+function renderEditor() {
     document.querySelector('.header').innerText = 'Edit Your Meme :)';
-    drawImg(elImg);
+    drawImg(gCurrElMeme);
     gElEditor.classList.toggle('hidden');
 }
 
-function drawImg(elImg) {
-    const img = elImg;
+function drawImg() {
+    const img = gCurrElMeme;
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
     gCtx.font = '50px impact';
     gCtx.fillStyle = 'white';
-    gCtx.fillText("CLICK HERE TO EDIT...", 300, 90);
-    gCtx.fillText("CLICK HERE TO EDIT...", 300, 650);
+    gCtx.fillText(gCurrMeme.topTxt, 300, 90);
+    gCtx.fillText(gCurrMeme.botTxt, 300, 650);
 }
 
 function closeEditor() {
@@ -46,11 +48,13 @@ function closeEditor() {
 }
 
 function setTopTxt(value) {
-    console.log(value);
+    gCurrMeme.topTxt = value;
+    drawImg();
 }
 
 function setBotTxt(value) {
-    console.log(value);
+    gCurrMeme.botTxt = value;
+    drawImg();
 }
 
 
