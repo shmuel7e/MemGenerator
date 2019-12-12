@@ -27,12 +27,12 @@ function createMemes() {
     gMemes.push(createMeme('imgs/22.jpg'));
     gMemes.push(createMeme('imgs/23.jpg'));
     gMemes.push(createMeme('imgs/24.jpg'));
-    gMemes.push(createMeme('imgs/24.jpg'));
-    gMemes.push(createMeme('imgs/24.jpg'));
-    gMemes.push(createMeme('imgs/24.jpg'));
-    gMemes.push(createMeme('imgs/24.jpg'));
-    gMemes.push(createMeme('imgs/24.jpg'));
-    gMemes.push(createMeme('imgs/24.jpg'));
+    gMemes.push(createMeme('imgs/25.jpg'));
+    gMemes.push(createMeme('imgs/26.jpg'));
+    gMemes.push(createMeme('imgs/27.jpg'));
+    gMemes.push(createMeme('imgs/28.jpg'));
+    gMemes.push(createMeme('imgs/29.jpg'));
+    gMemes.push(createMeme('imgs/30.jpg'));
 }
 
 function createMeme(imgURL) {
