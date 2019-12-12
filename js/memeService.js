@@ -49,7 +49,7 @@ function createMeme(imgURL) {
         txt: [
             {
                 line: 'CLICK HERE TO EDIT',
-                fontSize: 50,
+                fontSize: 35,
                 locationY: 90,
                 locationX: 0,
                 txtAlign: 'left',
@@ -60,8 +60,8 @@ function createMeme(imgURL) {
             },
             {
                 line: 'CLICK HERE TO EDIT HEHEHEHEHEE',
-                fontSize: 50,
-                locationY: 650,
+                fontSize: 35,
+                locationY: 450,
                 locationX: 0,
                 txtAlign: 'left',
                 txtColor: 'white',
@@ -93,9 +93,9 @@ function clearLine() {
 
 function addLine() {
     gCurrMeme.txt.push({
-        line: 'Lorem ipsum dolor sit amet',
-        fontSize: 50,
-        locationY: 350,
+        line: 'LOREM IPSUM DOLOR SIT AMET',
+        fontSize: 35,
+        locationY: 250,
         locationX: 0,
         txtAlign: 'left',
         txtColor: 'white',
