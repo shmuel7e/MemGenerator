@@ -21,41 +21,101 @@ function renderGallery() {
 
 function onHideGallery(elImg, memeId) {
     gElGallery.classList.toggle('hidden');
-    gCurrMeme = getMemeById(memeId);
-    gCurrElMeme = elImg;
+    setCurrMeme(elImg, memeId);
     renderEditor();
 }
 
 function renderEditor() {
-    document.querySelector('.header').innerText = 'Edit Your Meme :)';
     drawImg(gCurrElMeme);
     gElEditor.classList.toggle('hidden');
 }
 
-function drawImg() {
-    const img = gCurrElMeme;
-    gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
-    gCtx.font = '50px impact';
-    gCtx.fillStyle = 'white';
-    gCtx.fillText(gCurrMeme.topTxt, 300, 90);
-    gCtx.fillText(gCurrMeme.botTxt, 300, 650);
-}
-
-function closeEditor() {
+function onCloseEditor() {
     gElEditor.classList.toggle('hidden');
-    document.querySelector('.header').innerText = 'Welcome to my Meme Generator :)';
     gElGallery.classList.toggle('hidden');
 }
 
-function setTopTxt(value) {
-    gCurrMeme.topTxt = value;
+
+function drawImg() {
+    const currMemeImg = getCurrMemeImg();
+    var canvasWidth = getCanvasWidth();
+    var canvasHeight = getCanvasHeight();
+    gCtx.drawImage(currMemeImg, 0, 0, canvasWidth, canvasHeight);
+    for (var i = 0; i < 2; i++) {
+        var memeTxt = gCurrMeme.txt[i];
+        gCtx.font = `${memeTxt.fontSize}px ${memeTxt.txtFont}`
+        gCtx.fillStyle = memeTxt.txtColor;
+        gCtx.lineWidth = 3;
+        gCtx.fillText(memeTxt.line, memeTxt.locationX, memeTxt.locationY);
+        if (memeTxt.isStroke) gCtx.strokeText(memeTxt.line, memeTxt.locationX, memeTxt.locationY);
+    }
+}
+
+
+
+
+
+
+function onIncreaseFontSize() {
+    increaseFontSize();
     drawImg();
 }
 
-function setBotTxt(value) {
-    gCurrMeme.botTxt = value;
+function onDecreaseFontSize() {
+    decreaseFontSize();
     drawImg();
 }
+
+function onSetLine() {
+    setLine();
+    drawImg();
+}
+
+function onSetTxtColor(color) {
+    setTxtColor(color);
+    drawImg();
+}
+
+function onSetTxt(txt) {
+    setTxt(txt);
+    drawImg();
+}
+
+function onSetFont(font) {
+    setFont(font);
+    drawImg();
+}
+
+function onAlignTxtLeft() {
+    setTxtAlignLeft();
+    drawImg();
+}
+
+function onAlignTxtCenter() {
+    setTxtAlignCenter();
+    drawImg();
+}
+
+function onAlignTxtRight() {
+    setTxtAlignRight();
+    drawImg();
+}
+
+function onSetLineHeightUp() {
+    setTxtLineUp();
+    drawImg();
+}
+
+function onSetLineHeightDown() {
+    setTxtLineDown();
+    drawImg();
+}
+
+function onSetStroke(){
+    SetStroke();
+    drawImg();
+}
+
 
 
 // function a() {

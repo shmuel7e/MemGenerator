@@ -10,13 +10,30 @@
 </head>
 
 <body onload="init()">
-
-    <h1 class="header">Welcome to my Meme Generator</h1>
     <div class="images-wrapper"></div>
+  
     <div class="images-editor hidden">
-        Top Text Here <input placeholder="top-text" onkeyup="setTopTxt(value)"></input>
-        Top Text Here <input placeholder="bot-text" onkeyup="setBotTxt(value)"></input>
-        <button class="close-editor" onclick="closeEditor()">X</button>
+        <nav class="main-nav">Im a Nav BAR </nav>
+       <div class="tool-bar"><input placeholder="Lorem ipsum dolor sit amet" onkeyup="onSetTxt(value)"></input>
+        <input class="style-fonts" type="image" src="icons/increase font - icon.png" onclick="onIncreaseFontSize()"></input>
+        <input class="style-fonts" type="image" src="icons/decrease font - icon.png" onclick="onDecreaseFontSize()"></input>
+        <input class="style-fonts" type="image" src="icons/add.png" onclick="onSetLineHeightUp()"></input>
+        <input class="style-fonts" type="image" src="icons/subtract.svg" onclick="onSetLineHeightDown()"></input>
+        <input class="style-fonts" type="image" src="icons/text stroke.png" onclick="onSetStroke()"></input>
+        <input class="style-fonts" type="image" src="icons/up-and-down-opposite-double-arrows-side-by-side.png" onclick="onSetLine()"></input>
+        <input class="style-fonts" type="image" src="icons/align-to-left.png" onclick="onAlignTxtLeft()"></input>
+        <input class="style-fonts" type="image" src="icons/center-text-alignment.png" onclick="onAlignTxtCenter()"></input>
+        <input class="style-fonts" type="image" src="icons/align-to-right.png" onclick="onAlignTxtRight()"></input>
+        <input class="style-fonts" type="image" src="icons/paint-board-and-brush.png"> <label class="label" for="color"> s</label></input> 
+        <input class="hidden" type="color" id="color" onchange="onSetTxtColor(value)"></input>
+        <select onchange="onSetFont(value)">
+            <option>impact</option>
+            <option>arial</option>
+            <option>serif</option>
+            <option>sans-serif</option>
+        </select>
+        <button class="close-editor" onclick="onCloseEditor()">X</button>
+    </div>
         <canvas class="my-canvas" width="1000" height="700"></canvas>
     </div>
 
