@@ -41,7 +41,7 @@ function drawImg() {
     var canvasWidth = getCanvasWidth();
     var canvasHeight = getCanvasHeight();
     gCtx.drawImage(currMemeImg, 0, 0, canvasWidth, canvasHeight);
-    for (var i = 0; i < 2; i++) {
+    for (var i = 0; i < gCurrMeme.numOfLines; i++) {
         var memeTxt = gCurrMeme.txt[i];
         gCtx.font = `${memeTxt.fontSize}px ${memeTxt.txtFont}`
         gCtx.fillStyle = memeTxt.txtColor;
@@ -111,8 +111,23 @@ function onSetLineHeightDown() {
     drawImg();
 }
 
-function onSetStroke(){
-    SetStroke();
+function onSetStroke() {
+    setStroke();
+    drawImg();
+}
+
+function onClearLine() {
+    clearLine();
+    drawImg();
+}
+
+function onAddLine() {
+    addLine();
+    drawImg();
+}
+
+function onRemoveLine() {
+    removeLine();
     drawImg();
 }
 

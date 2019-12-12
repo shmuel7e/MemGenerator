@@ -44,6 +44,7 @@ function createMeme(imgURL) {
         sad: 1,
         funny: 1,
         selectedTxt: 0,
+        numOfLines: 2,
         id: gNextId++,
         txt: [
             {
@@ -86,55 +87,72 @@ function setCurrMeme(elImg, memeId) {
     gCurrElMeme = elImg;
 }
 
+function clearLine() {
+    gCurrMeme.txt[gCurrMeme.selectedTxt].line = '';
+}
+
+function addLine() {
+    gCurrMeme.txt.push({
+        line: 'Lorem ipsum dolor sit amet',
+        fontSize: 50,
+        locationY: 350,
+        locationX: 0,
+        txtAlign: 'left',
+        txtColor: 'white',
+        txtFont: 'impact',
+        isStroke: true
+    });
+    gCurrMeme.numOfLines++;
+}
+
+function removeLine() {
+    gCurrMeme.txt.slice();
+    gCurrMeme.numOfLines--;
+}
+
+
+
+
+function setStroke() {
+    gCurrMeme.txt[gCurrMeme.selectedTxt].isStroke = !gCurrMeme.txt[gCurrMeme.selectedTxt].isStroke;
+}
+
 function setTxtLineUp() {
-    if (!gCurrMeme.selectedTxt) gCurrMeme.txt[0].locationY--;
-    else gCurrMeme.txt[1].locationY--;
+    gCurrMeme.txt[gCurrMeme.selectedTxt].locationY--;
 }
-
-function SetStroke() {
-    if (!gCurrMeme.selectedTxt) gCurrMeme.txt[0].isStroke = !gCurrMeme.txt[0].isStroke;
-    else gCurrMeme.txt[1].isStroke = !gCurrMeme.txt[1].isStroke;
-}
-
 
 function setTxtLineDown() {
-    if (!gCurrMeme.selectedTxt) gCurrMeme.txt[0].locationY++;
-    else gCurrMeme.txt[1].locationY++;
+    gCurrMeme.txt[gCurrMeme.selectedTxt].locationY++;
 }
 
 function setTxt(txt) {
-    if (!gCurrMeme.selectedTxt) gCurrMeme.txt[0].line = txt;
-    else gCurrMeme.txt[1].line = txt;
+    gCurrMeme.txt[gCurrMeme.selectedTxt].line = txt;
 }
 
 function setLine() {
-    if (!gCurrMeme.selectedTxt) gCurrMeme.selectedTxt = 1;
-    else gCurrMeme.selectedTxt = 0;
+    if (gCurrMeme.selectedTxt + 1 === gCurrMeme.numOfLines) gCurrMeme.selectedTxt = 0;
+    else gCurrMeme.selectedTxt++;
+
 }
 
 function setTxtColor(color) {
-    if (!gCurrMeme.selectedTxt) gCurrMeme.txt[0].txtColor = color;
-    else gCurrMeme.txt[1].txtColor = color;
+    gCurrMeme.txt[gCurrMeme.selectedTxt].txtColor = color;
 }
 
 function setFont(font) {
-    if (!gCurrMeme.selectedTxt) gCurrMeme.txt[0].txtFont = font;
-    else gCurrMeme.txt[1].txtFont = font;
+    gCurrMeme.txt[gCurrMeme.selectedTxt].txtFont = font;
 }
 
 function setTxtAlignLeft() {
-    if (!gCurrMeme.selectedTxt) gCurrMeme.txt[0].locationX = 0;
-    else gCurrMeme.txt[1].locationX = 0;
+    gCurrMeme.txt[gCurrMeme.selectedTxt].locationX = 0;
 }
 
 function setTxtAlignCenter() {
-    if (!gCurrMeme.selectedTxt) gCurrMeme.txt[0].locationX = 350;
-    else gCurrMeme.txt[1].locationX = 350;
+    gCurrMeme.txt[gCurrMeme.selectedTxt].locationX = 350;
 }
 
 function setTxtAlignRight() {
-    if (!gCurrMeme.selectedTxt) gCurrMeme.txt[0].locationX = 600;
-    else gCurrMeme.txt[1].locationX = 600;
+    gCurrMeme.txt[gCurrMeme.selectedTxt].locationX = 600;
 }
 
 function increaseFontSize() {

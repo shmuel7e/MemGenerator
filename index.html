@@ -13,13 +13,19 @@
     <div class="images-wrapper"></div>
   
     <div class="images-editor hidden">
-        <nav class="main-nav">Im a Nav BAR </nav>
+        <nav class="main-nav">
+            <div class="main-logo"> <img src="logos/main.png"></img></div>
+            
+        </nav>
        <div class="tool-bar"><input placeholder="Lorem ipsum dolor sit amet" onkeyup="onSetTxt(value)"></input>
         <input class="style-fonts" type="image" src="icons/increase font - icon.png" onclick="onIncreaseFontSize()"></input>
         <input class="style-fonts" type="image" src="icons/decrease font - icon.png" onclick="onDecreaseFontSize()"></input>
-        <input class="style-fonts" type="image" src="icons/add.png" onclick="onSetLineHeightUp()"></input>
-        <input class="style-fonts" type="image" src="icons/subtract.svg" onclick="onSetLineHeightDown()"></input>
+        <input class="style-fonts" type="image" src="icons/arrowUp.svg" onclick="onSetLineHeightUp()"></input>
+        <input class="style-fonts" type="image" src="icons/arrowDown.svg" onclick="onSetLineHeightDown()"></input>
+        <input class="style-fonts" type="image" src="icons/add.png" onclick="onAddLine()"></input>
+        <input class="style-fonts" type="image" src="icons/subtract.svg" onclick="onRemoveLine()"></input>
         <input class="style-fonts" type="image" src="icons/text stroke.png" onclick="onSetStroke()"></input>
+        <input class="style-fonts" type="image" src="icons/trash.png" onclick="onClearLine()"></input>
         <input class="style-fonts" type="image" src="icons/up-and-down-opposite-double-arrows-side-by-side.png" onclick="onSetLine()"></input>
         <input class="style-fonts" type="image" src="icons/align-to-left.png" onclick="onAlignTxtLeft()"></input>
         <input class="style-fonts" type="image" src="icons/center-text-alignment.png" onclick="onAlignTxtCenter()"></input>
@@ -31,8 +37,9 @@
             <option>arial</option>
             <option>serif</option>
             <option>sans-serif</option>
+            <option>montserrat</option>
         </select>
-        <button class="close-editor" onclick="onCloseEditor()">X</button>
+        <button class="close-editor" onclick="onCloseEditor()">Gallery</button>
     </div>
         <canvas class="my-canvas" width="1000" height="700"></canvas>
     </div>
