@@ -13,17 +13,18 @@ function init() {
 function renderGallery() {
     var memes = gMemes;
     var items = memes.map(function (meme) {
-        return `<img src="${meme.imgURL}" onclick="onHideGallery(this,${meme.id})" data-id="${meme.id}"></img>`;
+        return `<img src="${meme.imgURL}" onclick="onHideGallery(this,${meme.id},'${meme.imgURL}')" data-id="${meme.id}"></img>`;
     })
     gElGallery.innerHTML = items.join('');
 }
 
 
-function onHideGallery(elImg, memeId) {
+function onHideGallery(elImg, memeId, imgURL) {
     gElGallery.classList.toggle('hidden');
     document.querySelector('.gallery-search-nav').classList.toggle('hidden');
     document.querySelector('.second-footer').classList.toggle('hidden');
     setCurrMeme(elImg, memeId);
+    setMemeImg(imgURL);
     renderEditor();
 }
 
@@ -43,6 +44,7 @@ function onCloseEditor() {
 
 function drawImg() {
     const currMemeImg = getCurrMemeImg();
+    setCanvas();
     var canvasWidth = getCanvasWidth();
     var canvasHeight = getCanvasHeight();
     gCtx.drawImage(currMemeImg, 0, 0, canvasWidth, canvasHeight);

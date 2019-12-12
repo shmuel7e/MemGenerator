@@ -38,8 +38,7 @@ function createMemes() {
 function createMeme(imgURL) {
     var meme = {
         imgURL: imgURL,
-        topTxt: 'Click here to edit',
-        botTxt: 'Click here to edit',
+        img: '',
         happy: 1,
         sad: 1,
         funny: 1,
@@ -81,6 +80,16 @@ function getMemeById(memeId) {
     return meme;
 }
 
+function setMemeImg(imgURL) {
+    let currImg = new Image();
+    currImg.src = imgURL;
+    gCurrMeme.img = currImg;
+}
+
+function setCanvas() {
+    gElCanvas.width = gCurrMeme.img.width
+    gElCanvas.height = gCurrMeme.img.height
+}
 
 function setCurrMeme(elImg, memeId) {
     gCurrMeme = getMemeById(memeId);

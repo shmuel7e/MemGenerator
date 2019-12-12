@@ -69,6 +69,7 @@
     display: block;
     object-fit: cover;
     cursor: pointer;
+    border-radius: 15%;
 }
 
 /*html*/
@@ -212,8 +213,8 @@ html {
     margin-bottom: 100px;
     margin-left: 100px;
     margin-right: -48px;
-    width: 550px;
-    height: 550px;
+    min-width: 500px;
+    min-height: 500px;
 }
 
 .container {
