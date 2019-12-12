@@ -7,50 +7,75 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Meme Generator</title>
     <link rel="stylesheet" href="css/global/global.css">
+    <link rel="stylesheet" href="lib/all.css">
 </head>
 
 <body onload="init()">
-        <nav class="main-nav flex row space-between align-center">
-                <div class="main-logo"> <img src="logos/main.png"></img></div>
-                <span class="secondery flex row align-center space-between">
-                <div class="gallery-nav" onclick="onCloseEditor()">Gallery</div>
-                <div class="seperator-nav"></div>
-                <div class="about-nav">About</div>
-                </span>
-        </nav>
-            <div class="images-editor hidden">
-                    <div class="container flex">
-                    <div class="tool-bar">
-                     <input class="placeholder" placeholder="Lorem ipsum dolor sit amet" onkeyup="onSetTxt(value)"></input>
-                     <input class="style-fonts font-up" type="image" src="icons/increase font - icon.png" onclick="onIncreaseFontSize()"></input>
-                     <input class="style-fonts font-down" type="image" src="icons/decrease font - icon.png" onclick="onDecreaseFontSize()"></input>
-                     <input class="style-fonts arrow-up" type="image" src="icons/arrowUp.svg" onclick="onSetLineHeightUp()"></input>
-                     <input class="style-fonts arrow-down" type="image" src="icons/arrowDown.svg" onclick="onSetLineHeightDown()"></input>
-                     <input class="style-fonts add" type="image" src="icons/add.png" onclick="onAddLine()"></input>
-                     <input class="style-fonts sub" type="image" src="icons/subtract.svg" onclick="onRemoveLine()"></input>
-                     <input class="style-fonts stroke" type="image" src="icons/text stroke.png" onclick="onSetStroke()"></input>
-                     <input class="style-fonts trash" type="image" src="icons/trash.png" onclick="onClearLine()"></input>
-                     <input class="style-fonts side-by-side" type="image" src="icons/up-and-down-opposite-double-arrows-side-by-side.png" onclick="onSetLine()"></input>
-                     <input class="style-fonts align-left" type="image" src="icons/align-to-left.png" onclick="onAlignTxtLeft()"></input>
-                     <input class="style-fonts align-center" type="image" src="icons/center-text-alignment.png" onclick="onAlignTxtCenter()"></input>
-                     <input class="style-fonts align-right" type="image" src="icons/align-to-right.png" onclick="onAlignTxtRight()"></input>
-                     <input class="style-fonts brush" type="image" src="icons/paint-board-and-brush.png"> <label class="label" for="color"> s</label></input> 
-                     <input class="hidden" type="color" id="color" onchange="onSetTxtColor(value)"></input>
-                     <select class="select" onchange="onSetFont(value)">
-                         <option>impact</option>
-                         <option>arial</option>
-                         <option>serif</option>
-                         <option>sans-serif</option>
-                         <option>montserrat</option>
-                     </select>
-                     <button class="share-btn">Share</button>
-                 </div>
-                     <canvas class="my-canvas" width="500" height="500"></canvas>
-                    </div>
-                 </div>
+    <nav class="main-nav flex row space-between align-center">
+        <div class="main-logo"> <img src="logos/main.png"></img></div>
+        <span class="secondery flex row align-center space-between">
+            <div class="gallery-nav" onclick="onCloseEditor()">Gallery</div>
+            <div class="seperator-nav"></div>
+            <div class="about-nav">About</div>
+        </span>
+    </nav>
+    <nav class="gallery-search-nav">
+        <div class="nav-container flex space-between align-center ">
+            <span><input class="search-bar" type="text" placeholder="Enter search keyword"><i class="fas fa-search"></i>
+                </input></span>
+            <div>funny</div>
+            <div>comics</div>
+            <div>dogs</div>
+            <div>drinks</div>
+            <div>books</div>
+        </div>
+    </nav>
+    <div class="images-editor hidden">
+        <div class="container flex">
+            <div class="tool-bar">
+                <input class="placeholder" placeholder="Lorem ipsum dolor sit amet" onkeyup="onSetTxt(value)"></input>
+                <input class="style-fonts font-up" type="image" src="icons/increase font - icon.png"
+                    onclick="onIncreaseFontSize()"></input>
+                <input class="style-fonts font-down" type="image" src="icons/decrease font - icon.png"
+                    onclick="onDecreaseFontSize()"></input>
+                <input class="style-fonts arrow-up" type="image" src="icons/arrowUp.svg"
+                    onclick="onSetLineHeightUp()"></input>
+                <input class="style-fonts arrow-down" type="image" src="icons/arrowDown.svg"
+                    onclick="onSetLineHeightDown()"></input>
+                <input class="style-fonts add" type="image" src="icons/add.png" onclick="onAddLine()"></input>
+                <input class="style-fonts sub" type="image" src="icons/subtract.svg" onclick="onRemoveLine()"></input>
+                <input class="style-fonts stroke" type="image" src="icons/text stroke.png"
+                    onclick="onSetStroke()"></input>
+                <input class="style-fonts trash" type="image" src="icons/trash.png" onclick="onClearLine()"></input>
+                <input class="style-fonts side-by-side" type="image"
+                    src="icons/up-and-down-opposite-double-arrows-side-by-side.png" onclick="onSetLine()"></input>
+                <input class="style-fonts align-left" type="image" src="icons/align-to-left.png"
+                    onclick="onAlignTxtLeft()"></input>
+                <input class="style-fonts align-center" type="image" src="icons/center-text-alignment.png"
+                    onclick="onAlignTxtCenter()"></input>
+                <input class="style-fonts align-right" type="image" src="icons/align-to-right.png"
+                    onclick="onAlignTxtRight()"></input>
+                <input class="style-fonts brush" type="image" src="icons/paint-board-and-brush.png"> <label
+                    class="label" for="color"> s</label></input>
+                <input class="hidden" type="color" id="color" onchange="onSetTxtColor(value)"></input>
+                <select class="select" onchange="onSetFont(value)">
+                    <option>impact</option>
+                    <option>arial</option>
+                    <option>serif</option>
+                    <option>sans-serif</option>
+                    <option>montserrat</option>
+                </select>
+                <button class="share-btn">Share</button>
+            </div>
+            <canvas class="my-canvas" width="600" height="500"></canvas>
+        </div>
+    </div>
     <div class="images-wrapper"></div>
-    <footer class="main-footer">IM A FOOTER !!!</footer>
-    
+    <footer class="main-footer flex align-center column justify-center">
+        <div class="main-logo"> <img src="logos/main.png"></img></div>
+        <small>all rights reserved 2019</small>
+    </footer>
+
 
 
     <script src="js/memeService.js"></script>

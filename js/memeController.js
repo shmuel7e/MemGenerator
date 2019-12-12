@@ -21,6 +21,7 @@ function renderGallery() {
 
 function onHideGallery(elImg, memeId) {
     gElGallery.classList.toggle('hidden');
+    document.querySelector('.gallery-search-nav').classList.toggle('hidden');
     setCurrMeme(elImg, memeId);
     renderEditor();
 }
@@ -31,8 +32,10 @@ function renderEditor() {
 }
 
 function onCloseEditor() {
+    if (!gCurrMeme) return;
     gElEditor.classList.toggle('hidden');
     gElGallery.classList.toggle('hidden');
+    document.querySelector('.gallery-search-nav').classList.toggle('hidden');
 }
 
 
