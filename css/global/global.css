@@ -669,16 +669,15 @@ p {
     .section-container {
         margin-left: 17px;
     }
-    .my-pick {
-        margin-left: initial;
+    .my-pic {
+        margin-left: 98px;
     }
     .images-wrapper img {
         min-width: 155px;
-        min-height: 200px;
+        min-height: 155px;
     }
-    .my-pick {
-        width: 200px;
-        height: 200px;
+    .info-container {
+        margin-left: 100px;
     }
     .s-container {
         flex-direction: column;
@@ -695,11 +694,20 @@ p {
         min-width: 300px;
         min-height: 300px;
     }
+    .social-links {
+        margin-left: -73px;
+    }
 }
 
 @media (max-width:500px) {
     .my-pic {
         margin-left: initial;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .info-container {
+        margin-left: 35px;
     }
     p {
         width: 300px;
@@ -781,9 +789,10 @@ p {
     .my-pic {
         width: 282px;
         height: 280px;
+        margin-left: 11px;
     }
     .info-container {
-        margin-left: initial;
+        margin-left: 18px;
     }
     .nav-container>* {
         margin-left: 10px;
