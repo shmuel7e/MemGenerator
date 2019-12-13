@@ -779,8 +779,9 @@ p {
 
 @media (max-width:400px) {
     .images-wrapper {
-        padding-right: initial;
-        padding-left: initial;
+        padding-right: 13px;
+        padding-left: 13px;
+        gap: 5px;
     }
     .images-wrapper img {
         min-width: 100px;
@@ -832,5 +833,8 @@ p {
     }
     h2 {
         font-size: 22px;
+    }
+    .fa-search:before {
+        margin-left: 9px;
     }
 }
