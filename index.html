@@ -8,6 +8,7 @@
     <title>Meme Generator</title>
     <link rel="stylesheet" href="css/global/global.css">
     <link rel="stylesheet" href="lib/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body onload="init()">
@@ -64,7 +65,7 @@
                 <input class="style-fonts align-right" type="image" src="icons/align-to-right.png"
                     onclick="onAlignTxtRight()"></input>
                 <input class="style-fonts brush" type="image" src="icons/paint-board-and-brush.png"> </input>
-               <input class="btn-for-color " type="color" id="color" onchange="onSetTxtColor(value)"></input> 
+                <input class="btn-for-color " type="color" id="color" onchange="onSetTxtColor(value)"></input>
                 <select class="select" onchange="onSetFont(value)">
                     <option>impact</option>
                     <option>arial</option>
@@ -82,7 +83,7 @@
     <div class="images-wrapper"></div>
     <section class="second-footer">
         <div class="section-container flex">
-            <img class="my-pic" src="imgs/me.jpg" width="315" height="300">
+            <img class="my-pic" src="imgs/me.jpg"></img>
             <div class="info-container">
                 <h2> Lorem ipsum dolor sit amet.</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione totam aut suscipit dolorem nobis
@@ -91,7 +92,16 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus vero esse quibusdam cum atque sequi
                     sed, aliquam a in dolores dicta repellendus fugiat quo blanditiis dignissimos delectus dolor eveniet
                     laboriosam?</p>
+                <div class="social-links">
+                    <ul class="social-nets-btns clean-list flex space-between">
+                        <li><a href="https://www.facebook.com/" class="fa fa-facebook"></a></li>
+                        <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://linkedin.com/"> <i class="fab fa-linkedin-in"></i> </a></li>
+                        <li><a href="https://github.com/"> <i class="fab fa-github"></i></a></li>
+                    </ul>
+                </div>
             </div>
+
         </div>
     </section>
     <footer class="main-footer flex align-center column justify-center">

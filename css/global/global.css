@@ -25,6 +25,41 @@
     src: url(/fonts/Montserrat/Montserrat-SemiBold.ttf);
 }
 
+/* social media */
+
+.social-nets-btns {
+    width: 175px;
+}
+
+.social-nets-btns li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: #ff7f00;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    transition: .4s ease;
+    border-radius: 20%;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.social-links {
+    margin-top: 60px;
+    margin-right: 20px;
+    margin-left: -40px;
+}
+
+.social-nets-btns li a:hover {
+    background: #000000;
+}
+
+.social-nets-btns li a:hover {
+    background: #0a0500;
+}
+
 /* Gallery */
 
 .search-bar {
@@ -63,6 +98,7 @@
     padding-right: 20px;
     padding-bottom: 20px;
     background-color: #e3e3e3;
+    margin-bottom: 10px;
 }
 
 .images-wrapper img {
@@ -75,6 +111,12 @@
     object-fit: cover;
     cursor: pointer;
     border-radius: 15%;
+    transition: ease 0.4s;
+}
+
+.images-wrapper img:hover {
+    width: 101%;
+    height: 101%;
 }
 
 /*html*/
@@ -82,6 +124,7 @@
 * {
     margin: 0;
     outline: none;
+    list-style-type: none;
 }
 
 html {
@@ -173,7 +216,7 @@ html {
 }
 
 .select {
-    width: 230px;
+    width: 220px;
     height: 60px;
     font-family: montserratMedium;
     font-size: 20px;
@@ -411,16 +454,19 @@ small {
     border-radius: 50%;
     margin-top: 60px;
     margin-left: 50px;
+    width: 345px;
+    height: 330px;
 }
 
 .section-container {
     width: 100%;
     height: 100%;
+    margin-left: 233px;
 }
 
 .info-container {
-    margin-top: 130px;
-    margin-left: 50px;
+    margin-top: 143px;
+    margin-left: 25px;
     display: flex;
     flex-direction: column;
 }
@@ -430,11 +476,17 @@ h2 {
     font-family: montserratMedium;
     font-size: 25px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 6px;
 }
 
 p {
-    width: 800px;
+    width: 733px;
+}
+
+@media (max-width:1400px) {
+    p {
+        width: 400px;
+    }
 }
 
 @media (max-width:1300px) {
@@ -468,6 +520,9 @@ p {
         margin-left: 325px;
         margin-top: 293px;
     }
+    p {
+        width: 400px;
+    }
 }
 
 @media (max-width:1100px) {
@@ -478,7 +533,6 @@ p {
         height: 43px;
     }
     .fa-search:before {
-        position: absolute;
         margin-top: -13px;
     }
     .search-bar {
@@ -488,10 +542,19 @@ p {
         margin-left: 50px;
     }
     p {
-        width: 400px;
+        width: 320px;
     }
     .images-wrapper {
         padding-right: 50px;
+    }
+    h2 {
+        width: 320px;
+    }
+    .gallery-search-nav {
+        height: 70px;
+    }
+    .s-container {
+        margin-top: 36px;
     }
 }
 
@@ -557,8 +620,152 @@ p {
     .gallery-nav:hover, .about-nav:hover {
         background-color: lavender;
     }
+    .section-container {
+        flex-direction: column;
+    }
+    .info-container {
+        margin-top: 2px;
+    }
+    .social-links {
+        margin-top: 2px;
+    }
+    h2 {
+        color: #ff7f00;
+        margin-top: 16px;
+    }
+    .second-footer {
+        height: 700px;
+    }
+    .social-nets-btns {
+        margin-top: 10px;
+        margin-left: 113px;
+    }
+    h2 {
+        width: initial;
+    }
+    p {
+        width: 500px;
+    }
 }
 
 .open {
     transform: translate(30%, 0);
+}
+
+@media (max-width:780px) {
+    .section-container {
+        margin-left: 160px;
+    }
+    p {
+        width: 400px;
+        font-size: 17px;
+    }
+}
+
+@media (max-width:600px) {
+    .images-wrapper {
+        width: initial;
+        grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+    }
+    .section-container {
+        margin-left: 17px;
+    }
+    .my-pick {
+        margin-left: initial;
+    }
+    .images-wrapper img {
+        min-width: 155px;
+        min-height: 200px;
+    }
+    .my-pick {
+        width: 200px;
+        height: 200px;
+    }
+    .s-container {
+        flex-direction: column;
+        margin-top: 37px;
+        height: 66px;
+    }
+    .gallery-search-nav {
+        height: 130px;
+    }
+    .tool-bar {
+        padding-left: 70px;
+    }
+    .my-canvas {
+        min-width: 300px;
+        min-height: 300px;
+    }
+}
+
+@media (max-width:500px) {
+    .my-pic {
+        margin-left: initial;
+    }
+    p {
+        width: 300px;
+        font-size: 17px;
+    }
+    .social-links {
+        margin-left: -100px;
+        margin-top: 10px;
+    }
+    .second-footer {
+        height: 750px;
+    }
+    .nav-hamburger {
+        margin-right: 26px;
+    }
+    .tool-bar {
+        padding-left: 70px;
+        gap: 20px;
+    }
+    .my-canvas {
+        min-width: 450px;
+        min-height: 200px;
+        margin-left: -100px;
+        padding: 15px;
+        padding-left: 10px;
+    }
+    .placeholder {
+        width: 455px;
+        margin-left: -65px;
+    }
+    .arrow-up {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .side-by-side {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    .arrow-down {
+        grid-column: 5;
+        grid-row: 2;
+    }
+    .font-down {
+        grid-column: 2;
+        grid-row: 3;
+    }
+    .font-up {
+        grid-column: 4;
+        grid-row: 3;
+    }
+    .align-left {
+        grid-column: 2;
+        grid-row: 4;
+    }
+    .align-center {
+        grid-column: 3;
+        grid-row: 4;
+    }
+    .align-right {
+        grid-column: 4;
+        grid-row: 4;
+    }
+    .share-btn {
+        grid-row: 6;
+        grid-column: 2/4;
+        width: 170px;
+    }
 }
