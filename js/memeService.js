@@ -42,6 +42,7 @@ function createMeme(imgURL) {
         happy: 1,
         sad: 1,
         funny: 1,
+        popular:1,
         selectedTxt: 0,
         numOfLines: 2,
         id: gNextId++,

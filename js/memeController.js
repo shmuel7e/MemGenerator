@@ -143,6 +143,16 @@ function onToggleMenu() {
     document.querySelector('.main-nav').classList.toggle('menu-open');
 }
 
+function onUploadMeme() {
+    var elForm = document.getElementById('fbshare');
+    uploadImg(elForm);
+}
+
+function onDownloadMeme(elLink) {
+    const data = gElCanvas.toDataURL('png')
+    elLink.href = data
+    elLink.download = 'my-meme.png'
+}
 
 
 // function a() {

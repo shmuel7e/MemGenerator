@@ -22,7 +22,7 @@
         <span class="secondery flex row align-center space-between">
             <div class="gallery-nav" onclick="onCloseEditor()">Gallery</div>
             <a class="seperator-nav"></a>
-            <div class="about-nav">About</div>
+            <div class="about-nav" onclick="window.location.href = 'https://shmuel7e.github.io/Gallery/';">About</div>
         </span>
     </nav>
     <nav class="gallery-search-nav">
@@ -73,7 +73,11 @@
                     <option>sans-serif</option>
                     <option>montserrat</option>
                 </select>
-                <button class="share-btn">Share</button>
+                <button class="download-btn" ><a class="ref" href="#" onclick="onDownloadMeme(this)" download="">Download</a></button>
+                <button class="share-btn" onclick="onUploadMeme()">Share</button>
+                <form id="fbshare" action="" method="POST" enctype="multipart/form-data">
+                    <input name="img" id="imgData" type="hidden" />
+                </form>
             </div>
             <div class="canvas-container">
                 <canvas class="my-canvas" width="600" height="500"></canvas>
@@ -94,10 +98,11 @@
                     laboriosam?</p>
                 <div class="social-links">
                     <ul class="social-nets-btns clean-list flex space-between">
-                        <li><a href="https://www.facebook.com/" class="fa fa-facebook"></a></li>
-                        <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="https://linkedin.com/"> <i class="fab fa-linkedin-in"></i> </a></li>
-                        <li><a href="https://github.com/"> <i class="fab fa-github"></i></a></li>
+                        <li><a href="https://www.facebook.com/shmuel.elkis.3" class="fa fa-facebook"></a></li>
+                        <li><a href="https://www.instagram.com/shmuel7_e/"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/shmuel-elkis/"> <i class="fab fa-linkedin-in"></i> </a>
+                        </li>
+                        <li><a href="https://github.com/shmuel7e/"> <i class="fab fa-github"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -113,6 +118,7 @@
 
     <script src="js/memeService.js"></script>
     <script src="js/memeController.js"></script>
+    <script src="js/uploadService.js"></script>
 </body>
 
 </html>
