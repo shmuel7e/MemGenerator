@@ -799,15 +799,13 @@ p {
     .nav-container>* {
         margin-left: 10px;
     }
-    .nav-hamburger {
-        margin-right: 5px;
-    }
     .secondery {
         width: 205px;
     }
     .my-canvas {
         min-width: 319px;
         min-height: 191px;
+        padding-left: 27px;
     }
     .placeholder {
         width: 319px;
@@ -834,7 +832,19 @@ p {
     h2 {
         font-size: 22px;
     }
-    .fa-search:before {
-        margin-left: 9px;
+    .search-bar {
+        font-size: 16px;
+    }
+    .nav-hamburger {
+        margin-right: 10px;
+    }
+    small {
+        margin-right: 70px;
+    }
+    #main-logo {
+        margin-right: 70px;
+    }
+    .placeholder {
+        width: 345px;
     }
 }
