@@ -73,7 +73,7 @@
 }
 
 .gallery-search-nav {
-    width: 100%;
+    width: 100% !important;
     height: 100px;
     line-height: 100px;
     background-color: #ffffff;
@@ -344,7 +344,7 @@ html {
 }
 
 .main-nav {
-    width: 100%;
+    width: 100% !important;
     height: 50px;
     background-color: #ff7f00;
     position: fixed;
@@ -428,7 +428,7 @@ html {
 /* footer */
 
 .main-footer {
-    width: 100%;
+    width: 100% !important;
     height: 207px;
     background-color: #ff7f00;
 }
@@ -505,10 +505,9 @@ p {
 @media (max-width:1200px) {
     .images-wrapper {
         background-repeat: no-repeat;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 10px;
         width: 100%;
-        padding-right: 30px;
     }
     .s-container {
         margin-right: 10px;
@@ -543,9 +542,6 @@ p {
     }
     p {
         width: 320px;
-    }
-    .images-wrapper {
-        padding-right: 50px;
     }
     h2 {
         width: 320px;
@@ -660,6 +656,9 @@ p {
         width: 400px;
         font-size: 17px;
     }
+    .images-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
 }
 
 @media (max-width:600px) {
@@ -767,5 +766,61 @@ p {
         grid-row: 6;
         grid-column: 2/4;
         width: 170px;
+    }
+}
+
+@media (max-width:400px) {
+    .images-wrapper {
+        padding-right: initial;
+        padding-left: initial;
+    }
+    .images-wrapper img {
+        min-width: 100px;
+        min-height: 100px;
+    }
+    .my-pic {
+        width: 282px;
+        height: 280px;
+    }
+    .info-container {
+        margin-left: initial;
+    }
+    .nav-container>* {
+        margin-left: 10px;
+    }
+    .nav-hamburger {
+        margin-right: 5px;
+    }
+    .secondery {
+        width: 205px;
+    }
+    .my-canvas {
+        min-width: 319px;
+        min-height: 191px;
+    }
+    .placeholder {
+        width: 319px;
+    }
+    .style-fonts {
+        width: 30px;
+        height: 30px;
+    }
+    .btn-for-color, .brush {
+        grid-column: 5;
+        grid-row: 4;
+    }
+    .stroke {
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .select {
+        width: 224px;
+    }
+    .share-btn {
+        grid-column: 1/4;
+        width: 194px;
+    }
+    h2 {
+        font-size: 22px;
     }
 }
