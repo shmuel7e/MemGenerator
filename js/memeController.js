@@ -138,6 +138,11 @@ function onRemoveLine() {
     drawImg();
 }
 
+function onToggleMenu() {
+    document.querySelector('.secondery').classList.toggle('open');
+    document.querySelector('.main-nav').classList.toggle('menu-open');
+}
+
 
 
 // function a() {

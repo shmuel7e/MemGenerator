@@ -12,10 +12,15 @@
 
 <body onload="init()">
     <nav class="main-nav flex row space-between align-center">
+        <button class="nav-hamburger" onclick="onToggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <div class="main-logo"> <img src="logos/main.png"></img></div>
         <span class="secondery flex row align-center space-between">
             <div class="gallery-nav" onclick="onCloseEditor()">Gallery</div>
-            <div class="seperator-nav"></div>
+            <a class="seperator-nav"></a>
             <div class="about-nav">About</div>
         </span>
     </nav>
@@ -58,9 +63,8 @@
                     onclick="onAlignTxtCenter()"></input>
                 <input class="style-fonts align-right" type="image" src="icons/align-to-right.png"
                     onclick="onAlignTxtRight()"></input>
-                <input class="style-fonts brush" type="image" src="icons/paint-board-and-brush.png"> <label
-                    class="label" for="color"> s</label></input>
-                <input class="hidden" type="color" id="color" onchange="onSetTxtColor(value)"></input>
+                <input class="style-fonts brush" type="image" src="icons/paint-board-and-brush.png"> </input>
+               <input class="btn-for-color " type="color" id="color" onchange="onSetTxtColor(value)"></input> 
                 <select class="select" onchange="onSetFont(value)">
                     <option>impact</option>
                     <option>arial</option>
@@ -70,7 +74,9 @@
                 </select>
                 <button class="share-btn">Share</button>
             </div>
-            <canvas class="my-canvas" width="600" height="500"></canvas>
+            <div class="canvas-container">
+                <canvas class="my-canvas" width="600" height="500"></canvas>
+            </div>
         </div>
     </div>
     <div class="images-wrapper"></div>
