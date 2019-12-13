@@ -784,7 +784,7 @@ p {
     }
     .images-wrapper img {
         min-width: 100px;
-        min-height: 100px;
+        min-height: 50px;
     }
     .my-pic {
         width: 282px;
