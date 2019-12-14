@@ -28,19 +28,19 @@
     <nav class="gallery-search-nav">
         <div class="s-container flex align-center space-around">
             <span id="large"><input class="search-bar" type="text" placeholder="Enter search keyword"
-                    onkeyup="console.log(value)"><i class="fas fa-search"></i>
+                    onkeyup="onSearchKeyWord(value)"><i class="fas fa-search"></i>
                 </input></span>
             <span id="notlarge" hidden><input class="search-bar" type="text" placeholder="Search..."><i
                     class="fas fa-search"></i>
                 </input></span>
             <div class="nav-container flex ">
-                <div onclick="onSetFilter('isFunny',this)">funny</div>
-                <div onclick="onSetFilter('isHappy',this)">happy</div>
-                <div onclick="onSetFilter('isSad',this)">sad</div>
-                <div onclick="onSetFilter('isDog',this)">dogs</div>
-                <div onclick="onSetFilter('isPbro',this)">BRUH</div>
-                    <span onclick="onSetFilter('isAll',this)">ALL</span>
-                    <span>more</span>
+                <div class="key" id="funny" onclick="onSetFilter('funny')">funny</div>
+                <div class="key" id="happy" onclick="onSetFilter('happy')">happy</div>
+                <div class="key" id="sad" onclick="onSetFilter('sad')">sad</div>
+                <div class="key" id="dogs" onclick="onSetFilter('dogs')">dogs</div>
+                <div class="key" id="BRUH" onclick="onSetFilter('BRUH')">BRUH</div>
+                <span onclick="onSetFilter('isAll')">ALL</span>
+                <span>more</span>
             </div>
         </div>
     </nav>

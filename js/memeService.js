@@ -42,15 +42,15 @@ function createMemes() {
     gMemes.push(createMeme('imgs/30.jpg', false, false, false, false, true, true));
 }
 
-function createMeme(imgURL, isFunny, isHappy, isSad, isDog, isPbro, isAll) {
+function createMeme(imgURL, funny, happy, sad, dogs, BRUH, isAll) {
     var meme = {
         imgURL: imgURL,
         img: '',
-        isFunny,
-        isHappy,
-        isSad,
-        isDog,
-        isPbro,
+        funny,
+        happy,
+        sad,
+        dogs,
+        BRUH,
         isAll,
         popular: 1,
         selectedTxt: 0,

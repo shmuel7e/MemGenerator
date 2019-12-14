@@ -20,18 +20,25 @@ function renderGallery() {
 
 
 
-function onSetFilter(filterKey, elKey) {
-    if (gFilterKeyFontSize[elKey.innerHTML] < 30) {
-        gFilterKeyFontSize[elKey.innerHTML]++;
+function onSetFilter(filterKey) {
+    var elKey = document.getElementById(filterKey);
+    if (gFilterKeyFontSize[filterKey] < 30) {
+        gFilterKeyFontSize[filterKey]++;
         elKey.style.fontSize = `${gFilterKeyFontSize[elKey.innerHTML]}px`;
     }
     gFilterBy = filterKey;
     renderGallery();
 }
 
-// function onSetFilterBySearchBar(keyWords){
-
-// }
+function onSearchKeyWord(input) {
+    input = input.toLowerCase();
+    let keyWords = document.getElementsByClassName('key');
+    for (var i = 0; i < keyWords.length; i++) {
+        if (keyWords[i].innerHTML.toLowerCase().includes(input)) {
+            onSetFilter(keyWords[i].innerHTML);
+        }
+    }
+}
 
 function onHideGallery(elImg, memeId, imgURL) {
     gElGallery.classList.toggle('hidden');
