@@ -20,22 +20,27 @@
         </button>
         <div class="main-logo"> <img src="logos/main.png"></img></div>
         <span class="secondery flex row align-center space-between">
-            <div class="gallery-nav" onclick="onCloseEditor()">Gallery</div>
+            <div class="gallery-nav border" onclick="onCloseEditor()">Gallery</div>
             <a class="seperator-nav"></a>
             <div class="about-nav" onclick="window.location.href = 'https://shmuel7e.github.io/Gallery/';">About</div>
         </span>
     </nav>
     <nav class="gallery-search-nav">
         <div class="s-container flex align-center space-around">
-            <span><input class="search-bar" type="text" placeholder="Enter search keyword"><i class="fas fa-search"></i>
+            <span id="large"><input class="search-bar" type="text" placeholder="Enter search keyword"
+                    onkeyup="console.log(value)"><i class="fas fa-search"></i>
+                </input></span>
+            <span id="notlarge" hidden><input class="search-bar" type="text" placeholder="Search..."><i
+                    class="fas fa-search"></i>
                 </input></span>
             <div class="nav-container flex ">
-                <div>funny</div>
-                <div>comics</div>
-                <div>dogs</div>
-                <div>drinks</div>
-                <div>books</div>
-                <div>more</div>
+                <div onclick="onSetFilter('isFunny',this)">funny</div>
+                <div onclick="onSetFilter('isHappy',this)">happy</div>
+                <div onclick="onSetFilter('isSad',this)">sad</div>
+                <div onclick="onSetFilter('isDog',this)">dogs</div>
+                <div onclick="onSetFilter('isPbro',this)">BRUH</div>
+                    <span onclick="onSetFilter('isAll',this)">ALL</span>
+                    <span>more</span>
             </div>
         </div>
     </nav>
@@ -64,8 +69,9 @@
                     onclick="onAlignTxtCenter()"></input>
                 <input class="style-fonts align-right" type="image" src="icons/align-to-right.png"
                     onclick="onAlignTxtRight()"></input>
-                <input class="style-fonts brush" type="image" src="icons/paint-board-and-brush.png"> </input>
-                <input class="btn-for-color " type="color" id="color" onchange="onSetTxtColor(value)"></input>
+                <input class="style-fonts brush" onclick="onSetColor()" type="image"
+                    src="icons/paint-board-and-brush.png"> </input>
+                <input class="btn-for-color hidden" type="color" id="color" onchange="onSetTxtColor(value)"></input>
                 <select class="select" onchange="onSetFont(value)">
                     <option>impact</option>
                     <option>arial</option>
@@ -73,8 +79,9 @@
                     <option>sans-serif</option>
                     <option>montserrat</option>
                 </select>
-                <button class="download-btn" ><a class="ref" href="#" onclick="onDownloadMeme(this)" download="">Download</a></button>
-                <button class="share-btn" onclick="onUploadMeme()">Share</button>
+                <button class="download-btn"><a class="ref" href="#" onclick="onDownloadMeme(this)"
+                        download="">Download</a></button>
+                <button class="share-btn" onclick="onShareMeme()">Share</button>
                 <form id="fbshare" action="" method="POST" enctype="multipart/form-data">
                     <input name="img" id="imgData" type="hidden" />
                 </form>

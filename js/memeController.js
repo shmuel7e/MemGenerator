@@ -11,7 +11,7 @@ function init() {
 }
 
 function renderGallery() {
-    var memes = gMemes;
+    var memes = getMemesToRender();
     var items = memes.map(function (meme) {
         return `<img src="${meme.imgURL}" onclick="onHideGallery(this,${meme.id},'${meme.imgURL}')" data-id="${meme.id}"></img>`;
     })
@@ -19,11 +19,27 @@ function renderGallery() {
 }
 
 
+
+function onSetFilter(filterKey, elKey) {
+    if (gFilterKeyFontSize[elKey.innerHTML] < 30) {
+        gFilterKeyFontSize[elKey.innerHTML]++;
+        elKey.style.fontSize = `${gFilterKeyFontSize[elKey.innerHTML]}px`;
+    }
+    gFilterBy = filterKey;
+    renderGallery();
+}
+
+// function onSetFilterBySearchBar(keyWords){
+
+// }
+
 function onHideGallery(elImg, memeId, imgURL) {
     gElGallery.classList.toggle('hidden');
     document.querySelector('.gallery-search-nav').classList.toggle('hidden');
     document.querySelector('.second-footer').classList.toggle('hidden');
+    document.querySelector('.gallery-nav').classList.remove('border');
     setCurrMeme(elImg, memeId);
+    setMemePopularity();
     setMemeImg(imgURL);
     renderEditor();
 }
@@ -35,6 +51,7 @@ function renderEditor() {
 
 function onCloseEditor() {
     if (!gCurrMeme) return;
+    document.querySelector('.gallery-nav').classList.toggle('border');
     gElEditor.classList.toggle('hidden');
     gElGallery.classList.toggle('hidden');
     document.querySelector('.gallery-search-nav').classList.toggle('hidden');
@@ -81,6 +98,12 @@ function onSetLine() {
 function onSetTxtColor(color) {
     setTxtColor(color);
     drawImg();
+}
+
+function onSetColor() {
+    document.querySelector(".btn-for-color").focus();
+    document.querySelector(".btn-for-color").value = "#FFCC00";
+    document.querySelector(".btn-for-color").click();
 }
 
 function onSetTxt(txt) {
@@ -143,7 +166,7 @@ function onToggleMenu() {
     document.querySelector('.main-nav').classList.toggle('menu-open');
 }
 
-function onUploadMeme() {
+function onShareMeme() {
     var elForm = document.getElementById('fbshare');
     uploadImg(elForm);
 }
@@ -153,6 +176,7 @@ function onDownloadMeme(elLink) {
     elLink.href = data
     elLink.download = 'my-meme.png'
 }
+
 
 
 // function a() {

@@ -1,48 +1,58 @@
 'use strict'
-var gMemes, gNextId = 1, gElGallery, gElEditor, gCurrMeme, gCurrElMeme, gElCanvas, gCtx;
-
-function createMemes() {
-    gMemes = [];
-    gMemes.push(createMeme('imgs/1.jpg'));
-    gMemes.push(createMeme('imgs/2.jpg'));
-    gMemes.push(createMeme('imgs/3.jpg'));
-    gMemes.push(createMeme('imgs/4.jpg'));
-    gMemes.push(createMeme('imgs/5.jpg'));
-    gMemes.push(createMeme('imgs/6.jpg'));
-    gMemes.push(createMeme('imgs/7.jpg'));
-    gMemes.push(createMeme('imgs/8.jpg'));
-    gMemes.push(createMeme('imgs/9.jpg'));
-    gMemes.push(createMeme('imgs/10.jpg'));
-    gMemes.push(createMeme('imgs/11.jpg'));
-    gMemes.push(createMeme('imgs/12.jpg'));
-    gMemes.push(createMeme('imgs/13.jpg'));
-    gMemes.push(createMeme('imgs/14.jpg'));
-    gMemes.push(createMeme('imgs/15.jpg'));
-    gMemes.push(createMeme('imgs/16.jpg'));
-    gMemes.push(createMeme('imgs/17.jpg'));
-    gMemes.push(createMeme('imgs/18.jpg'));
-    gMemes.push(createMeme('imgs/19.jpg'));
-    gMemes.push(createMeme('imgs/20.jpg'));
-    gMemes.push(createMeme('imgs/21.jpg'));
-    gMemes.push(createMeme('imgs/22.jpg'));
-    gMemes.push(createMeme('imgs/23.jpg'));
-    gMemes.push(createMeme('imgs/24.jpg'));
-    gMemes.push(createMeme('imgs/25.jpg'));
-    gMemes.push(createMeme('imgs/26.jpg'));
-    gMemes.push(createMeme('imgs/27.jpg'));
-    gMemes.push(createMeme('imgs/28.jpg'));
-    gMemes.push(createMeme('imgs/29.jpg'));
-    gMemes.push(createMeme('imgs/30.jpg'));
+var gMemes, gNextId = 1, gElGallery, gElEditor, gCurrMeme, gCurrElMeme, gElCanvas, gCtx, gFilterBy = 'isAll';
+var gFilterKeyFontSize = {
+        funny:16,
+        happy:16,
+        sad:16,
+        dogs:16,
+        BRUH:16,
 }
 
-function createMeme(imgURL) {
+function createMemes() {
+    gMemes = [];                       // funny happy sad dog please bro//
+    gMemes.push(createMeme('imgs/1.jpg', false, true, false, false, false, true));
+    gMemes.push(createMeme('imgs/2.jpg', true, false, false, false, true, true));
+    gMemes.push(createMeme('imgs/3.jpg', false, false, true, true, false, true));
+    gMemes.push(createMeme('imgs/4.jpg', false, false, true, true, false, true));
+    gMemes.push(createMeme('imgs/5.jpg', true, false, false, false, false, true));
+    gMemes.push(createMeme('imgs/6.jpg', true, false, true, false, false, true));
+    gMemes.push(createMeme('imgs/7.jpg', true, false, false, false, false, true));
+    gMemes.push(createMeme('imgs/8.jpg', true, true, false, false, true, true));
+    gMemes.push(createMeme('imgs/9.jpg', true, true, false, false, false, true));
+    gMemes.push(createMeme('imgs/10.jpg', true, false, false, false, false, true));
+    gMemes.push(createMeme('imgs/11.jpg', true, true, false, false, true, true));
+    gMemes.push(createMeme('imgs/12.jpg', true, false, false, false, false, true));
+    gMemes.push(createMeme('imgs/13.jpg', true, true, false, false, true, true));
+    gMemes.push(createMeme('imgs/14.jpg', true, false, false, false, false, true));
+    gMemes.push(createMeme('imgs/15.jpg', true, true, false, false, false, true));
+    gMemes.push(createMeme('imgs/16.jpg', false, true, false, true, false, true));
+    gMemes.push(createMeme('imgs/17.jpg', true, true, false, false, false, true));
+    gMemes.push(createMeme('imgs/18.jpg', true, false, false, false, false, true));
+    gMemes.push(createMeme('imgs/19.jpg', false, true, false, false, true, true));
+    gMemes.push(createMeme('imgs/20.jpg', false, false, true, false, true, true));
+    gMemes.push(createMeme('imgs/21.jpg', false, false, false, false, true, true));
+    gMemes.push(createMeme('imgs/22.jpg', false, true, false, false, false, true));
+    gMemes.push(createMeme('imgs/23.jpg', false, true, false, false, false, true));
+    gMemes.push(createMeme('imgs/24.jpg', true, false, false, false, true, true));
+    gMemes.push(createMeme('imgs/25.jpg', false, true, false, false, true, true));
+    gMemes.push(createMeme('imgs/26.jpg', true, false, false, false, true, true));
+    gMemes.push(createMeme('imgs/27.jpg', true, false, false, false, false, true));
+    gMemes.push(createMeme('imgs/28.jpg', true, false, false, false, true, true));
+    gMemes.push(createMeme('imgs/29.jpg', true, true, false, false, true, true));
+    gMemes.push(createMeme('imgs/30.jpg', false, false, false, false, true, true));
+}
+
+function createMeme(imgURL, isFunny, isHappy, isSad, isDog, isPbro, isAll) {
     var meme = {
         imgURL: imgURL,
         img: '',
-        happy: 1,
-        sad: 1,
-        funny: 1,
-        popular:1,
+        isFunny,
+        isHappy,
+        isSad,
+        isDog,
+        isPbro,
+        isAll,
+        popular: 1,
         selectedTxt: 0,
         numOfLines: 2,
         id: gNextId++,
@@ -87,6 +97,7 @@ function setMemeImg(imgURL) {
     gCurrMeme.img = currImg;
 }
 
+
 function setCanvas() {
     gElCanvas.width = gCurrMeme.img.width
     gElCanvas.height = gCurrMeme.img.height
@@ -99,6 +110,10 @@ function setCurrMeme(elImg, memeId) {
 
 function clearLine() {
     gCurrMeme.txt[gCurrMeme.selectedTxt].line = '';
+}
+
+function setMemePopularity() {
+    gCurrMeme.popular++;
 }
 
 function addLine() {
@@ -120,8 +135,10 @@ function removeLine() {
     gCurrMeme.numOfLines--;
 }
 
-
-
+function getMemesToRender() {
+    var filteredMemes = gMemes.filter(meme => meme[gFilterBy]);
+    return filteredMemes;
+}
 
 function setStroke() {
     gCurrMeme.txt[gCurrMeme.selectedTxt].isStroke = !gCurrMeme.txt[gCurrMeme.selectedTxt].isStroke;
